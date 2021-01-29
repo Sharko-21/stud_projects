@@ -1,0 +1,17 @@
+doctype html
+html
+    include base.jade
+    script.
+        let id = #{id}
+    script(src="/static/js/ensemble.js")
+    main(role="main" class="container")
+        h1 #{name}
+        h3 #{type}
+        p #{description}
+        div(class="compositions")
+            h3 Композиции ансамбля
+            div(class="compositions_list list-group")
+            h3(style="margin-top: 20px;") Состав ансамбля
+            div(class="musicians_list list-group")
+            h3(style="margin-top: 20px;") Пластинки ансамбля
+            div(class="plates_list list-group")

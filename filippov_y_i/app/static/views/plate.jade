@@ -1,0 +1,16 @@
+doctype html
+html
+    include base.jade
+    script(src="/static/js/plate.js")
+    main(role="main" class="container")
+        p Название пластинки: #{name}
+        p Производитель: #{producedBy}
+        p Дата выпуска: #{date}
+        p Цена: #{retailPrice}
+            button(class="btn btn-danger" id="buy_plate" value="#{id}" style="margin-left:15px") Купить
+        p(style="margin-top: 25px;") #{description}
+        div(class="compositions")
+            h3 Композиции пластинки
+            div(class="compositions_list list-group")
+                each item in compositions
+                    a(href="/composition/#{item.id}" class="list-group-item list-group-item-action") #{item.name}

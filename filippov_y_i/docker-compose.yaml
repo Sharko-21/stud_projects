@@ -1,0 +1,39 @@
+version: '2.1'
+
+networks:
+  main:
+
+services:
+  api:
+    image: 'node:14.15.4-stretch'
+    container_name: "api"
+    ports:
+      - 443:443
+      - 80:80
+    links:
+      - ws-db
+    depends_on:
+      ws-db:
+        condition: service_healthy
+    networks:
+      main:
+        aliases:
+          - api
+    volumes:
+      - ./app:/var/app
+    command: bash -c "cd /var/app && npm start"
+  ws-db:
+    image: 'postgres:11.5'
+    container_name: "ws-db"
+    volumes:
+      - ./db/database:/var/lib/postgresql/data
+    networks:
+      main:
+        aliases:
+          - ws_1_db
+    environment:
+      - POSTGRES_PASSWORD=qwerty1234
+      - POSTGRES_USER=filippov
+      - POSTGRES_DB=music_shop
+    healthcheck:
+      test: "exit 0"

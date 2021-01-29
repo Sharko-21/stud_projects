@@ -1,0 +1,11 @@
+doctype html
+html
+    include base.jade
+    main(role="main" class="container")
+        pimg(src="/static/img/storage/#{image}.png")
+        p Имя - #{name}
+        p Дата рождения - #{date}
+        p #{description}
+        form(method="post" enctype="multipart/form-data" action="/musician/image/1")
+            input(type="file" name="file")
+            input(type="submit" value="Submit")

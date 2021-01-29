@@ -1,0 +1,36 @@
+{
+  "name": "music_app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/nodemon/bin/nodemon.js --config /var/app/nodemon.json /var/app/index.js"
+  },
+  "nodemonConfig": {
+    "watch": [
+      "app"
+    ],
+    "ext": "js"
+  },
+  "author": "Filippov Yaroslav",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "camelcase": "latest",
+    "db-migrate": "^0.11.12",
+    "db-migrate-pg": "^1.2.2",
+    "decamelize": "latest",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "gm": "^1.23.1",
+    "jade": "^1.11.0",
+    "md5": "^2.3.0",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.7",
+    "pg-promise": "^10.9.1"
+  },
+  "devDependencies": {
+    "underscore": "^1.12.0"
+  }
+}

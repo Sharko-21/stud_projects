@@ -1,0 +1,38 @@
+doctype html
+html
+    include base.jade
+    script.
+        let isAdmin = #{isAdmin}
+    script(src="/static/js/home.js")
+    body
+        div(class="row")
+            div(class="col-md-5 mb-3" style="max-width:250px; margin-left: 22px;")
+                label(for="type") Поиск по:
+                select(class="custom-select d-block w-100", id="type", required)
+                    option(value="plate") Пластинкам
+                    option(value="ensemble") Ансамблям
+                    option(value="musician") Музыкантам
+                    option(value="composition") Композициям
+            div(class="col-md-6 mb-3" style="max-width:450px;")
+                label(for="name") Название:
+                input(type="text", class="form-control", id="name", placeholder="Введите название", value="", required)
+                div(class="invalid-feedback") Valid first name required
+            span(class="form-inline my-2 my-lg-0" style="margin-top: 13px !important;")
+                button(class="btn btn-secondary my-2 my-sm-0" id="search") Искать
+            if isAdmin
+                span(class="form-inline my-2 my-lg-0 create_block" style="margin-top: 13px !important; margin-left: 10px;")
+                    button(class="btn btn-secondary my-2 my-sm-0" id="create_plate" data-toggle="modal" data-target="#myModal") Добавить
+        div(class="row cards" style="margin-left: 8px")
+        div(class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true")
+            div(class="modal-dialog" role="document")
+                div(class="modal-content")
+                    div(class="modal-header")
+                        button(type="button" class="close" data-dismiss="modal" aria-label="Close")
+                            span(aria-hidden="true") &times;
+                        h4(class="modal-title") Modal title
+                    div(class="modal-body")
+
+                    div(class="modal-footer")
+                        button(type="button" class="btn btn-secondary" data-dismiss="modal" id = "close_modal") Закрыть
+                        button(type="button" class="btn btn-primary modal_save") Сохранить
+

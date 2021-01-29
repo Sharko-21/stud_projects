@@ -1,0 +1,23 @@
+{
+  "dev": {
+    "host": "ws-db",
+    "user": "filippov",
+    "password" : "qwerty1234",
+    "database": "music_shop",
+    "driver": "pg"
+  },
+  "test": {
+    "host": "ws-db",
+    "user": "filippov",
+    "password" : "qwerty1234",
+    "database": "music_shop",
+    "driver": "pg"
+  },
+  "prod": {
+    "host": "ws-db",
+    "user": "filippov",
+    "password" : "qwerty1234",
+    "database": "music_shop",
+    "driver": "pg"
+  }
+}

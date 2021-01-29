@@ -1,0 +1,2 @@
+INSERT INTO composition_ensemble_plate
+    SELECT id, ensemble_id, ${plateId} FROM composition WHERE name = ${compositionName} AND (${ensembleId} IS NULL OR ensemble_id = ${ensembleId}) RETURNING composition_id;

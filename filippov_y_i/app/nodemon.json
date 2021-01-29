@@ -1,0 +1,4 @@
+{
+  "watch": ["/var/app"],
+  "ext": "js, html, css, jade"
+}
